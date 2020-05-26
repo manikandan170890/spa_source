@@ -108,7 +108,7 @@ class List extends React.Component {
         );  
       }
 
-    onSubmitHandler = e => {  //Submit handler for both Add/Edit using W_id
+    onSubmitHandler = e => {  //Submit handler for both Add/Edit using spa_id
         e.preventDefault();
         if(this.validation()) {  //Checking the validation
             this.setState({error:null}); //success the validation then reassign null to error state
@@ -116,7 +116,7 @@ class List extends React.Component {
             spa_id: 1 + Math.random(),
             spa_date: this.state.spa_date,
             spa_description: this.state.spa_description,
-            spa_IE: this.state.isspending ? 0 : 1,//this.state.w_IE,
+            spa_IE: this.state.isspending ? 0 : 1,
             spa_amount: this.state.spa_amount
             };
             const data = this.state.spa_data;
@@ -148,7 +148,7 @@ class List extends React.Component {
         });
        
          
-        //bake_cookie(cookie_key, w_data);
+       
               
     }
 
@@ -163,7 +163,7 @@ class List extends React.Component {
 
 
                  <div className="row mb-4">
-                <div className="col-sm-6  ">
+                <div className="col-sm-6 p-2 ">
                     <button className="btn btn-block btn-success float-right "
                     data-toggle="modal" data-target="#spaModal"
                     onClick={() => {
@@ -171,7 +171,7 @@ class List extends React.Component {
                       }}
                     >Add Income</button>
                 </div>
-                <div className="col-sm-6 ">
+                <div className="col-sm-6 p-2 ">
                 <button className="btn btn-block btn-danger"
                 data-toggle="modal" data-target="#spaModal"
                 onClick={() => this.isPopup()}
